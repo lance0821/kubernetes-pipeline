@@ -3,6 +3,8 @@ pipeline {
   agent {
     kubernetes {
       yamlFile 'kaniko-builder.yaml'
+      serviceAccount 'jenkins-service-account'
+      namespace 'jenkins'
     }
   }
 
